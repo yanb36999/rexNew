@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmcsoft.rex.logging.business.dao.BusinessLoggerDao">
+    <resultMap id="BusinessLoggerResultMap" type="com.zmcsoft.rex.logging.business.BusinessLogger">
+        <id property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="app" column="app" javaType="String" jdbcType="VARCHAR"/>
+        <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="threadId" column="thread_id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="threadName" column="thread_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="className" column="class_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="methodName" column="method_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="lineNumber" column="line_number" javaType="int" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" javaType="Long" jdbcType="NUMERIC"/>
+        <result property="message" column="message" javaType="String" jdbcType="CLOB"/>
+        <result property="level" column="level_" javaType="String" jdbcType="VARCHAR"/>
+        <result property="requestId" column="request_id" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!--用于动态生成sql所需的配置-->
+    <sql id="config">
+        <bind name="resultMapId" value="'BusinessLoggerResultMap'"/>
+        <bind name="tableName" value="'s_business_logger'"/>
+    </sql>
+
+    <insert id="insert" parameterType="com.zmcsoft.rex.logging.business.BusinessLogger">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildInsertSql"/>
+    </insert>
+
+    <select id="query" parameterType="org.hswebframework.web.commons.entity.Entity" resultMap="BusinessLoggerResultMap">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildSelectSql"/>
+    </select>
+
+    <select id="count" parameterType="org.hswebframework.web.commons.entity.Entity" resultType="int">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildTotalSql"/>
+    </select>
+</mapper>

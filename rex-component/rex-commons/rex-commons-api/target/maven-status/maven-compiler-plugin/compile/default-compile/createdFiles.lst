@@ -1,0 +1,8 @@
+com/zmcsoft/rex/commons/district/api/service/RoadService.class
+com/zmcsoft/rex/commons/district/api/utils/BeanUtils.class
+com/zmcsoft/rex/commons/district/api/entity/Road$RoadBuilder.class
+com/zmcsoft/rex/commons/district/api/entity/Road.class
+com/zmcsoft/rex/commons/district/api/entity/RoadSeg.class
+com/zmcsoft/rex/commons/district/api/utils/NullUtils.class
+com/zmcsoft/rex/commons/district/api/service/RoadSegService.class
+com/zmcsoft/rex/commons/district/api/entity/RoadSeg$RoadSegBuilder.class

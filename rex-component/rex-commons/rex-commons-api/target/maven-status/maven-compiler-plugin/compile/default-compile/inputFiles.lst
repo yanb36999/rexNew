@@ -1,0 +1,6 @@
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/utils/BeanUtils.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/service/RoadSegService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/service/RoadService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/entity/RoadSeg.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/entity/Road.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-commons/rex-commons-api/src/main/java/com/zmcsoft/rex/commons/district/api/utils/NullUtils.java

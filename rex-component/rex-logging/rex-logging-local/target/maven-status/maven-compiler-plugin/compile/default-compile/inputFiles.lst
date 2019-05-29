@@ -1,0 +1,5 @@
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-logging/rex-logging-local/src/main/java/com/zmcsoft/rex/logging/web/LoggerController.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-logging/rex-logging-local/src/main/java/com/zmcsoft/rex/logging/access/AccessLoggerDao.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-logging/rex-logging-local/src/main/java/com/zmcsoft/rex/logging/BusinessAndAccessLoggerService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-logging/rex-logging-local/src/main/java/com/zmcsoft/rex/logging/business/dao/BusinessLoggerDao.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-component/rex-logging/rex-logging-local/src/main/java/com/zmcsoft/rex/logging/access/entity/AccessLogger.java

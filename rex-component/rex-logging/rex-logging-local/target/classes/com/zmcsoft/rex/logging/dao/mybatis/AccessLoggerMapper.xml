@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmcsoft.rex.logging.access.AccessLoggerDao">
+    <resultMap id="AccessLoggerResultMap" type="com.zmcsoft.rex.logging.access.entity.AccessLogger">
+        <id property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="app" column="app" javaType="String" jdbcType="VARCHAR"/>
+        <result property="methodName" column="method_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="className" column="class_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="ipAddress" column="ip_addr" javaType="String" jdbcType="VARCHAR"/>
+        <result property="httpHeader" column="http_header" javaType="String" jdbcType="VARCHAR"/>
+        <result property="httpMethod" column="http_method" javaType="String" jdbcType="VARCHAR"/>
+        <result property="requestUrl" column="request_url" javaType="String" jdbcType="VARCHAR"/>
+        <result property="requestUserId" column="request_user_id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="requestUserName" column="request_user_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="methodName" column="method_name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="requestTime" column="request_time" javaType="Long" jdbcType="NUMERIC"/>
+        <result property="responseTime" column="response_time" javaType="Long" jdbcType="NUMERIC"/>
+        <result property="parameters" column="parameters" javaType="String" jdbcType="CLOB"/>
+        <result property="action" column="action" javaType="String" jdbcType="VARCHAR"/>
+        <result property="response" column="response" javaType="String" jdbcType="CLOB"/>
+    </resultMap>
+
+
+    <!--用于动态生成sql所需的配置-->
+    <sql id="config">
+        <bind name="resultMapId" value="'AccessLoggerResultMap'"/>
+        <bind name="tableName" value="'s_access_logger'"/>
+    </sql>
+
+    <insert id="insert" parameterType="com.zmcsoft.rex.logging.access.entity.AccessLogger">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildInsertSql"/>
+    </insert>
+
+    <update id="update" parameterType="org.hswebframework.web.commons.entity.Entity">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildUpdateSql"/>
+    </update>
+
+    <select id="query" parameterType="org.hswebframework.web.commons.entity.Entity" resultMap="AccessLoggerResultMap">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildSelectSql"/>
+    </select>
+
+    <select id="count" parameterType="org.hswebframework.web.commons.entity.Entity" resultType="int">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildTotalSql"/>
+    </select>
+</mapper>
