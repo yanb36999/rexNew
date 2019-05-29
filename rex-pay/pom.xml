@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>rex-platform</artifactId>
+        <groupId>com.zmcsoft.rex</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rex-pay</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>rex-pay-api</module>
+        <module>rex-pay-local</module>
+        <module>rex-pay-web</module>
+        <module>rex-pay-oauth2</module>
+    </modules>
+
+
+</project>

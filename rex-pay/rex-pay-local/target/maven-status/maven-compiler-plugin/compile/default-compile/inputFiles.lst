@@ -1,0 +1,8 @@
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/icbc/ICBCApiRequest.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/impl/service/LocalPayDetailService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/unionpay/UnionPayChannel.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/icbc/ICBCRetryPayService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/impl/dao/PayDetailDao.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/DESUtils.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/icbc/ICBCPayChannel.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-local/src/main/java/com/zmcsoft/rex/pay/AsyncCallbackSupport.java

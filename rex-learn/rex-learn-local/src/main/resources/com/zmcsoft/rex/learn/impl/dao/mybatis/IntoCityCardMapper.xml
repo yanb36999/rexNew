@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmcsoft.rex.learn.impl.dao.IntoCityCardDao">
+    <resultMap id="IntoCityCardResultMap" type="com.zmcsoft.rex.learn.api.entity.IntoCityCard">
+              <id property="id" column="id" javaType="string" jdbcType="VARCHAR"/>
+            <result property="openId" column="open_id" javaType="String" jdbcType="VARCHAR"/>
+            <result property="plateNumber" column="plate_number" javaType="String" jdbcType="VARCHAR"/>
+            <result property="plateType" column="plate_type" javaType="String" jdbcType="VARCHAR"/>
+            <result property="vin" column="vin" javaType="String" jdbcType="VARCHAR"/>
+            <result property="type" column="type" javaType="String" jdbcType="VARCHAR"/>
+            <result property="applyYear" column="apply_year" javaType="String" jdbcType="VARCHAR"/>
+            <result property="applyTime" column="apply_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="sendTime" column="send_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="applyStatus" column="apply_status" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="errorType" column="error_type" javaType="String" jdbcType="VARCHAR"/>
+            <result property="errorReason" column="error_reason" javaType="String" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="userName" column="user_name" javaType="String" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" javaType="String" jdbcType="VARCHAR"/>
+            <result property="carOwner" column="car_owner" javaType="String" jdbcType="VARCHAR"/>
+            <result property="cardNo" column="card_no" javaType="String" jdbcType="VARCHAR"/>
+            <result property="cardImgPath" column="card_img_path" javaType="String" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--用于动态生成sql所需的配置-->
+    <sql id="config">
+        <bind name="resultMapId" value="'IntoCityCardResultMap'"/>
+        <bind name="tableName" value="'into_city_card'"/>
+    </sql>
+  
+    <insert id="insert" parameterType="com.zmcsoft.rex.learn.api.entity.IntoCityCard" >
+        <include refid="config"/>
+        <include refid="BasicMapper.buildInsertSql"/>
+    </insert>
+
+    <delete id="deleteByPk" parameterType="String">
+        delete from into_city_card where u_id =#{id}
+    </delete>
+
+    <delete id="delete" parameterType="org.hswebframework.web.commons.entity.Entity">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildDeleteSql"/>
+    </delete>
+
+    <update id="update" parameterType="org.hswebframework.web.commons.entity.Entity">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildUpdateSql"/>
+    </update>
+
+    <select id="query" parameterType="org.hswebframework.web.commons.entity.Entity" resultMap="IntoCityCardResultMap">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildSelectSql"/>
+    </select>
+
+    <select id="count" parameterType="org.hswebframework.web.commons.entity.Entity" resultType="int">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildTotalSql"/>
+    </select>
+</mapper>

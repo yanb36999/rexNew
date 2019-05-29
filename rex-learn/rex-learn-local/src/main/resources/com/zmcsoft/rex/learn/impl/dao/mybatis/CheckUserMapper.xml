@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmcsoft.rex.learn.impl.dao.CheckUserDao">
+    <resultMap id="CheckUserResultMap" type="com.zmcsoft.rex.learn.api.entity.CheckUser">
+              <id property="id" column="id" javaType="string" jdbcType="VARCHAR"/>
+            <result property="openId" column="open_id" javaType="String" jdbcType="VARCHAR"/>
+            <result property="commitTime" column="commit_time" javaType="String" jdbcType="VARCHAR"/>
+            <result property="returnTime" column="return_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="returnStatus" column="return_status" javaType="String" jdbcType="VARCHAR"/>
+            <result property="errorSign" column="error_sign" javaType="String" jdbcType="VARCHAR"/>
+            <result property="errorReason" column="error_reason" javaType="String" jdbcType="VARCHAR"/>
+            <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+            <result property="licenseNo" column="license_no" javaType="String" jdbcType="VARCHAR"/>
+            <result property="fileNo" column="file_no" javaType="String" jdbcType="VARCHAR"/>
+            <result property="sendOffice" column="send_office" javaType="String" jdbcType="VARCHAR"/>
+            <result property="driverType" column="driver_type" javaType="String" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" javaType="String" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <result property="licenseScore" column="license_score" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" javaType="String" jdbcType="VARCHAR"/>
+            <result property="learnStatus" column="learn_status" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="currTime" column="curr_time" javaType="String" jdbcType="VARCHAR"/>
+            <result property="countTime" column="count_time" javaType="String" jdbcType="VARCHAR"/>
+            <result property="completeTime" column="complete_time" javaType="Date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--用于动态生成sql所需的配置-->
+    <sql id="config">
+        <bind name="resultMapId" value="'CheckUserResultMap'"/>
+        <bind name="tableName" value="'LS_CHECK_USER'"/>
+    </sql>
+  
+    <insert id="insert" parameterType="com.zmcsoft.rex.learn.api.entity.CheckUser" >
+        <include refid="config"/>
+        <include refid="BasicMapper.buildInsertSql"/>
+    </insert>
+
+    <delete id="deleteByPk" parameterType="String">
+        delete from LS_CHECK_USER where u_id =#{id}
+    </delete>
+
+    <delete id="delete" parameterType="org.hswebframework.web.commons.entity.Entity">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildDeleteSql"/>
+    </delete>
+
+    <update id="update" parameterType="org.hswebframework.web.commons.entity.Entity">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildUpdateSql"/>
+    </update>
+
+    <select id="query" parameterType="org.hswebframework.web.commons.entity.Entity" resultMap="CheckUserResultMap">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildSelectSql"/>
+    </select>
+
+    <select id="count" parameterType="org.hswebframework.web.commons.entity.Entity" resultType="int">
+        <include refid="config"/>
+        <include refid="BasicMapper.buildTotalSql"/>
+    </select>
+
+    <select id="queryLastCommitTime" parameterType="String" resultType="String">
+        SELECT date_format(max(start_time),'%Y-%m-%d') FROM LS_COURSE_DETAIL = #{userDetailId};
+    </select>
+
+    <select id="queryCheckUserByLicenseNo" resultMap="CheckUserResultMap">
+        select LS_CHECK_USER.`id` AS `id`,
+               LS_CHECK_USER.`open_id` AS `open_id`,
+               LS_CHECK_USER.`commit_time` AS `commit_time`,
+               LS_CHECK_USER.`return_time` AS `return_time`,
+               LS_CHECK_USER.`return_status` AS `return_status`,
+               LS_CHECK_USER.`error_sign` AS `error_sign`,
+               LS_CHECK_USER.`error_reason` AS `error_reason`,
+               LS_CHECK_USER.`name` AS `name`,
+               LS_CHECK_USER.`license_no` AS `license_no`,
+               LS_CHECK_USER.`file_no` AS `file_no`,
+               LS_CHECK_USER.`send_office` AS `send_office`,
+               LS_CHECK_USER.`driver_type` AS `driver_type`,
+               LS_CHECK_USER.`phone` AS `phone`,
+               LS_CHECK_USER.`create_time` AS `create_time`,
+               LS_CHECK_USER.`update_time` AS `update_time`,
+               LS_CHECK_USER.`license_score` AS `license_score`,
+               LS_CHECK_USER.`remark` AS `remark`,
+               LS_CHECK_USER.`learn_status` AS `learn_status`,
+               LS_CHECK_USER.`curr_time` AS `curr_time`,
+               LS_CHECK_USER.`count_time` AS `count_time`,
+               LS_CHECK_USER.`complete_time` AS `complete_time`
+        from LS_CHECK_USER
+        WHERE  LS_CHECK_USER.`license_no`=#{licenseNo} AND LS_CHECK_USER.`learn_status`
+        NOT IN
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        limit 0,1
+    </select>
+</mapper>

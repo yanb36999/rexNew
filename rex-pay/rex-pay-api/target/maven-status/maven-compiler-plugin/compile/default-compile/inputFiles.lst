@@ -1,0 +1,9 @@
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/PayRequest.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/PayResponse.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/DefaultRexPayService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/RexPayChannel.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/RexPayService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/RexPayChannelSupplier.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/service/PayDetailService.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/pay/RexPayChannelAutoConfiguration.java
+/data/jenkinshome/workspace/rex-platform-all-prod-55/rex-pay/rex-pay-api/src/main/java/com/zmcsoft/rex/entity/PayDetail.java
